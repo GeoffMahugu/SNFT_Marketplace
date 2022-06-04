@@ -1,0 +1,72 @@
+### REF-https://documenter.getpostman.com/view/8364145/UVsMvkgG#dcd413ce-1ea0-4762-af34-7228f126b95b
+
+### VERIFY JWT
+
+GET https://nsys.inf4mation.com/api/jwt/verify HTTP/1.1
+Host: nsys.inf4mation.com
+x-accessKeyId: AKIAYL6VP5R57W4UDVR5
+x-secretAccessKey: 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
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMHg0RUYyMDYzQzUyNDYxQkRlRkVlRmZkNUQ3MWJFNjc3ZGEyMjA2NzY1IiwiaWF0IjoxNjU0MjY4MTg3LCJleHAiOjE2NTQyNzE3ODd9.Rm1LzYNJbA4BfBerhuWEj5nwERkKpKGgCn8gbAh4EBU
+
+
+### CHECK USER NONCE
+
+GET https://nsys.inf4mation.com/api/users/check?WalletUID=0x00000000000000000000000000000000000320005554 HTTP/1.1
+Host: nsys.inf4mation.com
+x-accessKeyId: AKIAYL6VP5R57W4UDVR5
+x-secretAccessKey: 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
+
+### SIGN IN AND GET JWT
+
+POST https://nsys.inf4mation.com/api/users/connect
+Host: nsys.inf4mation.com
+x-accessKeyId: AKIAYL6VP5R57W4UDVR5
+x-secretAccessKey: 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
+Content-Length: 239
+
+{
+    "Nonce": 994381,
+    "Signature": "0x2d971382f159df613cfc7f519bd767ae14af669beea0b74a598bf2f25c58014b3c492934a857d8d78d152614ab437520a5bef4618bb0d2f534149803ce9364b71c",
+    "WalletUID": "0x4EF2063C52461BDeFEeFfd5D71bE677da2206765"
+}
+
+
+### GET SINGLE USER
+
+
+GET https://nsys.inf4mation.com/api/users/get?WalletUID=0x00000000000000000000000000000000000320005554
+Host: nsys.inf4mation.com
+x-accessKeyId: AKIAYL6VP5R57W4UDVR5
+x-secretAccessKey: 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
+
+
+### GET LIST OF ASSETS
+
+GET https://nsys.inf4mation.com/api/assets/search
+Host: nsys.inf4mation.com
+x-accessKeyId: AKIAYL6VP5R57W4UDVR5
+x-secretAccessKey: 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
+
+
+### POST:: CREATE USER
+
+POST https://nsys.inf4mation.com/api/users/create
+Host: nsys.inf4mation.com
+x-accessKeyId: AKIAYL6VP5R57W4UDVR5
+x-secretAccessKey: 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
+Content-Length: 359
+
+{
+    "WalletUID":"0x4EF2063C52461BDeFEeFfd5D71bE677da2206765",
+    "Username": "Geoff",
+    "Bio":null,
+    "Email":"hi@oukhrib.com",
+    "Website":null,
+    "TwitterHandle":null,
+    "TwitterHandleVerified":null,
+    "InstagramHandle":null,
+    "InstagramHandleVerified":null,
+    "Location":null,
+    "ProfileImage":null,
+    "BackgroundImage": null
+}
